@@ -1,0 +1,33 @@
+{
+  "name": "ng6-starter",
+  "version": "0.0.1",
+  "description": "Starter for Angular + ES6 + (Webpack or JSPM)",
+  "main": "index.js",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "pushbullet": "^2.0.0",
+    "request": "^2.79.0",
+    "rx": "^4.1.0"
+  },
+  "devDependencies": {
+    "cheerio": "^0.22.0",
+    "pushbullet": "^2.0.0",
+    "request": "^2.79.0",
+    "rx": "^4.1.0"
+  },
+  "scripts": {
+    "test": "karma start",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "angular",
+    "webpack",
+    "es6"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/angularclass/NG6-starter.git"
+  },
+  "author": "AngularClass",
+  "license": "Apache-2.0"
+}
