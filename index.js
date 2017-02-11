@@ -5,8 +5,8 @@ var request = require("request");
 // var axios = require('axios');
 var Rx = require('rx');
 
-// var timeEvents = Rx.Observable.interval(300000); //get data every 5 min
-var timeEvents = Rx.Observable.interval(1000); //get data every 5 min
+var timeEvents = Rx.Observable.interval(300000); //get data every 5 min
+// var timeEvents = Rx.Observable.interval(1000); //get data every 5 min
 
 timeEvents.subscribe(function () {
   getData();
