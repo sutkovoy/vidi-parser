@@ -1,5 +1,6 @@
 var cheerio = require('cheerio');
 var express = require('express');
+var http = require('http');
 var PushBullet = require('pushbullet'); //api for push notification
 var pusher = new PushBullet('o.k6Ad96wcQtbBNTddbpPH1uqrhy6UVwUy');
 var openshift = require('openshift-express');
@@ -9,15 +10,16 @@ var Rx = require('rx');
 
 var app = express();
 
+app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 8080);
+app.set('ip', process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1');
+
+http.createServer(app).listen(app.get('port'), app.get('ip'), function(){
+  console.log('Express server listening on port ' + app.get('port'));
+});
+
 app.get('/', function (req, res) {
   res.send('Hello World!');
 });
-
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
-});
-
-openshift(app, {});
 
 var timeEvents = Rx.Observable.interval(300000); //get data every 5 min
 // var timeEvents = Rx.Observable.interval(1000); //get data every 5 min
