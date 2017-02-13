@@ -29,7 +29,6 @@ timeEvents.subscribe(function () {
 });
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://nick885:5454541a6jc@ds149479.mlab.com:49479/vidi');
 
 var Schema = mongoose.Schema;
 
